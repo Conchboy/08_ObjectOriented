@@ -7,7 +7,7 @@ class Cat:
 
 
 tom = Cat()
-
+tom.name = "Tom"
 
 tom.eat()
 tom.drink()
