@@ -24,3 +24,12 @@ xiaoming.run()
 xiaoming.eat()
 
 print(xiaoming)
+
+# 小美爱跑步
+xiaomei = Person("小美", 45)
+xiaomei.eat()
+print(xiaomei)
+
+xiaomei.run()
+print("xiaomei", xiaomei)
+print(xiaoming)
