@@ -24,4 +24,4 @@ class Gun:
 ak47 = Gun("AK47")
 ak47.reload(55)
 ak47.fire()
-print("%s 还有 %d发子弹" % (AK47.model, AK47.bullet_count))
+print("%s 还有 %d发子弹" % (ak47.model, ak47.bullet_count))
