@@ -31,5 +31,5 @@ xiaomei.eat()
 print(xiaomei)
 
 xiaomei.run()
-print("xiaomei", xiaomei)
+print(xiaomei)
 print(xiaoming)

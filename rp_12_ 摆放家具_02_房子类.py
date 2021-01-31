@@ -24,6 +24,9 @@ class House:
 
     def add_item(self, item):
         print("要添加 %s" % item)
+        self.free_area -= item.area
+        self.item_list.append(item.name)
+
         pass
 
 
@@ -37,8 +40,9 @@ print(wardrobe)
 print(table)
 
 # 创建房子对象
-my_house = House("两室一厅", 60)
+my_house = House("两室一厅", 90)
 my_house.add_item(bed)
+my_house.add_item(wardrobe)
 my_house.add_item(wardrobe)
 my_house.add_item(table)
 
