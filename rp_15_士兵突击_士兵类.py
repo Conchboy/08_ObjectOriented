@@ -3,33 +3,56 @@
 # 枪能够发射子弹
 # 枪装填子弹 -- 增加子弹数量
 class Gun:
-    def __init__(self, model, bullet_count):
+    def __init__(self, model):
+        # 1. 枪的型号
         self.model = model
-        self.bullet_count = bullet_count
+        # 2. 子弹的数量为零
+        self.bullet_count = 0
+
+    def reload(self, count):
+        self.bullet_count += count
 
     def fire(self):
+        if self.bullet_count <= 0:
+            print("残念, [%s]没有子弹了..." % self.model)
+            return
         self.bullet_count -= 1
+        print(" [%s]突突突~~ [%d]"
+              % (self.model, self.bullet_count))
 
 
-class Solder:
-    def __init__(self, name, gun):
+class Soldier:
+    def __init__(self, name):
+        # 1. 姓名
         self.name = name
-        self.gun = gun
+        # 2. 枪 --新兵没有枪
+        self.gun = None
 
-    def trigger(self, gun):
+    def trigger(self):
+        # 1.判断士兵是否有枪?
+        if self.gun == None:
+            print("长官, [%s] 还没有枪, 烧火棍凑活一下?" % self.name)
+            return
+        # 2. 高喊口号
+        print("冲啊..[%s]!" % self.name)
+        # 3. 让枪装填子弹
+        self.gun.reload(1)
+        # 4. 让枪发射子弹
         if self.gun.bullet_count > 0:
             self.gun.fire()
             print("%s扣动了扳机, %s发射了一发子弹"
-              % (self.name, self.gun.model))
+                  % (self.name, self.gun.model))
         else:
             print("长官, %s已经弹尽粮绝" % self.name)
 
 
-AK47 = Gun("AK47", 100)
-xusando = Solder("许三多", AK47)
+# 1. 创建枪对象
+ak47 = Gun("AK47")
+xusando = Soldier("许三多")
+xusando.gun = ak47
 
 for i in range(101):
-    xusando.trigger(AK47)
+    xusando.trigger()
 
 
 print("现在%s里还有%d发子弹" %
