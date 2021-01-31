@@ -47,4 +47,10 @@ print(table)
 # 创建房子对象
 my_house = House("两室一厅", 90)
 
+# 添加家具
+my_house.add_item(bed)
+my_house.add_item(wardrobe)
+my_house.add_item(wardrobe)
+my_house.add_item(table)
+
 print(my_house)
