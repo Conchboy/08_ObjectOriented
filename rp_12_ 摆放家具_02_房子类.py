@@ -26,19 +26,19 @@ class House:
         # 1.判断家具的面积是否超过剩余面积
         if item.area > self.free_area:
             print("%s的占地太大, 实在放不下啊!" % item.name)
-        else:
-            # 2. 将家具添加到房子中
-            print("要添加 %s" % item)
-            # 计算房子的剩余面积
-            self.free_area -= item.area
+            return
+        # 2. 将家具添加到房子中
+        print("要添加 %s" % item)
+        # 计算房子的剩余面积
+        self.free_area -= item.area
         # 在房子的家具列表中加入当前添加的家具
-            self.item_list.append(item.name)
+        self.item_list.append(item.name)
 
 
 # 1. 创建家具
-bed = HouseItem("席梦思", 100)
+bed = HouseItem("席梦思", 40)
 wardrobe = HouseItem("衣柜", 2)
-table = HouseItem("餐桌", 1.5)
+table = HouseItem("餐桌", 8)
 
 print(bed)
 print(wardrobe)
