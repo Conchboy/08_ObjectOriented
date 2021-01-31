@@ -9,3 +9,7 @@ class Women:
 
     def __secrete(self):
         print(" %s的年龄是 %d" % (self.name, self.age))
+
+
+xiaofang = Women("小芳")
+print(xiaofang.age)
